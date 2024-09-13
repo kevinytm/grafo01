@@ -44,4 +44,22 @@ public class Grafo {
     public String toString(){
         return name+" [Grado: "+vertices.size()+"]";
     }
+    
+    public void mostrarGradoVertices(){
+        System.out.println("Lista del grado");
+        for(Vertice01 v:vertices){
+            System.out.println(v+"("+v.getEdges().size()+")");
+        }
+    }
+    
+    public void mostrarGradoAdyacencias(){
+        System.out.println("Lista de adyacencia");
+        for(Vertice01 v:vertices){
+            System.out.println(v+"("+v.getEdges().size()+"){");
+            for(Vertice01 edge:v.getEdges()){
+                System.out.println(edge+", ");
+            }
+            System.out.println("])");
+        }
+    }
 }

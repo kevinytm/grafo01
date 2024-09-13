@@ -30,8 +30,10 @@ public class Grafo01 {
         v3.getEdges().add(v1);
         v4.getEdges().add(v3);
         
-        Grafo grafo01=new Grafo();
+        Grafo grafo01=new Grafo("El grafo jacoso");
         grafo01.addVertice(v1,v2,v3,v4);
+        grafo01.mostrarGradoVertices();
+        grafo01.mostrarGradoAdyacencias();
         
         System.out.println(v1);
         System.out.println(v2);
