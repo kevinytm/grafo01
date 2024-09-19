@@ -3,7 +3,9 @@ package com.mycompany.grafo01;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -37,7 +39,6 @@ public class Grafo {
             this.vertices.add(v);
         }*/
         this.vertices.addAll(Arrays.asList(vertice));
-
     }
     
     @Override
@@ -60,6 +61,24 @@ public class Grafo {
                 System.out.println(edge+", ");
             }
             System.out.println("])");
+        }
+    }
+    
+    public void recorridoEnAnchura(Vertice01 inicio){
+        Queue<Vertice01> queue = new LinkedList<>();
+        inicio.setVisited(true);
+        queue.add(inicio);
+        
+        Vertice01 actual;
+        while(!queue.isEmpty()){
+            actual =queue.poll();
+            System.out.println(actual);
+            for (Vertice01 v:actual.getEdges()){
+                if(!v.isVisited()){
+                    v.setVisited(true);
+                    queue.add(v);
+                }
+            }
         }
     }
 }
