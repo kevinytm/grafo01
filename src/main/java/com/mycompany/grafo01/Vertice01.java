@@ -23,6 +23,8 @@ public class Vertice01 {
     private List<Vertice01> edges;
     private boolean visited;
     
+    
+    
     public Vertice01(String label,int data){
         this.label = label;
         this.data=data;
